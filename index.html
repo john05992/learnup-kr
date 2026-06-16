@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>런업 | 맞춤 성적 비교 플랫폼</title>
+<meta name="description" content="실제 수능 성적 향상 데이터로 검증된 전국 684개 맞춤 기관을 비교하세요. 과목별·지역별 성적 분석.">
+<meta name="keywords" content="맞춤교육, 성적향상, 수능대비, 내신관리, 성적데이터, 교육랭킹, 교육비교">
+<link rel="canonical" href="https://learnup.kr/">
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://learnup.kr/">
+<meta property="og:site_name" content="런업">
+<meta property="og:title" content="런업 | 맞춤 성적 비교 플랫폼">
+<meta property="og:description" content="실제 수능 성적 향상 데이터로 검증된 전국 684개 맞춤 기관을 비교하세요. 과목별·지역별 성적 분석.">
+<meta property="og:image" content="https://learnup.kr/apple-touch-icon.png">
+<meta property="og:locale" content="ko_KR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Barlow',sans-serif;background:#fff;color:#111;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all}
+:root{--red:#FF2D20;--ink:#111;--off:#f5f5f5}
+
+nav{height:56px;background:#fff;border-bottom:3px solid var(--ink);position:sticky;top:0;z-index:100;display:flex;align-items:center}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;letter-spacing:0.02em;text-transform:uppercase;color:var(--ink)}
+.nav-logo .up{color:var(--red)}
+.nav-badge{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;background:var(--red);color:#fff;padding:4px 12px;letter-spacing:0.08em;text-transform:uppercase}
+
+.hero{background:#fff;border-bottom:3px solid var(--ink)}
+.hero-inner{max-width:1400px;margin:0 auto;padding:64px 32px 56px;display:grid;grid-template-columns:1fr;gap:48px}
+@media(min-width:768px){.hero-inner{grid-template-columns:1fr 1fr;gap:64px;align-items:end}}
+.h-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.h-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(56px,9vw,112px);font-weight:900;letter-spacing:-0.02em;line-height:1.0;text-transform:uppercase;color:var(--ink);margin-bottom:32px}
+.h-title .accent{color:var(--red)}
+.h-body{font-size:15px;color:#555;line-height:1.75;max-width:440px;font-weight:400}
+.big-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:3px solid var(--ink)}
+.bs{padding:28px 24px;border-right:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.bs:nth-child(2n){border-right:none}
+.bs:nth-child(n+3){border-bottom:none}
+.bs-num{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,5vw,56px);font-weight:900;letter-spacing:-0.02em;line-height:1;color:var(--ink)}
+.bs-num.red{color:var(--red)}
+.bs-label{font-size:11px;color:#777;margin-top:6px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase}
+
+.band{background:var(--ink);padding:14px 32px}
+.band-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:0;overflow-x:auto}
+.bi{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:rgba(255,255,255,0.3);padding:0 24px;border-right:1px solid rgba(255,255,255,0.1);white-space:nowrap;letter-spacing:0.04em;text-transform:uppercase;flex-shrink:0}
+.bi:first-child{padding-left:0}
+.bi:last-child{border-right:none}
+.bi strong{color:#fff}
+
+.tabs-section{max-width:1400px;margin:0 auto;padding:56px 32px;border-bottom:3px solid var(--ink)}
+.tabs-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,52px);font-weight:900;letter-spacing:-0.01em;text-transform:uppercase;margin-bottom:32px}
+.tab-row{display:flex;gap:0;border:3px solid var(--ink);width:fit-content;margin-bottom:40px}
+.tab{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;padding:10px 22px;border-right:3px solid var(--ink);cursor:pointer;letter-spacing:0.06em;text-transform:uppercase;color:#aaa;background:#fff}
+.tab:last-child{border-right:none}
+.tab.on{background:var(--ink);color:#fff}
+.tab.on.red{background:var(--red)}
+.tab-panel{display:none}.tab-panel.on{display:block}
+
+.ct-head{background:var(--ink);display:grid;grid-template-columns:2fr 1fr 140px 140px 120px;gap:0}
+.ct-head-c{color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:14px 18px;border-right:1px solid rgba(255,255,255,0.08)}
+.ct-head-c:last-child{border-right:none}
+.ct-row{display:grid;grid-template-columns:2fr 1fr 140px 140px 120px;gap:0;border-bottom:3px solid var(--ink)}
+.ct-row:last-child{border-bottom:none}
+.ct-row:hover{background:var(--off)}
+.ct-cell{padding:20px 18px;border-right:3px solid var(--ink);font-size:13px;display:flex;align-items:center}
+.ct-cell:last-child{border-right:none}
+.ct-name{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;text-transform:uppercase;letter-spacing:0.01em;color:var(--ink)}
+.ct-loc{font-size:11px;color:#777;margin-top:2px;font-weight:400;letter-spacing:0.02em;text-transform:uppercase}
+.bar-wrap{height:6px;background:#e5e5e5;flex:1;margin-left:10px}
+.bar-f{height:100%;background:var(--red)}
+.score-val{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;color:var(--ink);min-width:44px}
+.table-border{border:3px solid var(--ink);border-top:none}
+
+.big-nums{background:var(--off);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.bn-inner{max-width:1400px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+@media(min-width:768px){.bn-inner{grid-template-columns:repeat(4,1fr)}}
+.bn-col{padding:0 32px;border-right:3px solid var(--ink)}
+.bn-col:first-child{padding-left:0}
+.bn-col:last-child{border-right:none}
+.bn-num{font-family:'Barlow Condensed',sans-serif;font-size:clamp(56px,7vw,80px);font-weight:900;letter-spacing:-0.03em;line-height:0.9;color:var(--ink);margin-bottom:12px}
+.bn-sup{font-size:0.4em;font-weight:600;color:#777;vertical-align:super;letter-spacing:0}
+.bn-label{font-size:11px;color:#777;font-weight:500;line-height:1.5;letter-spacing:0.04em;text-transform:uppercase}
+
+.chart-section{max-width:1400px;margin:0 auto;padding:56px 32px;border-bottom:3px solid var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:64px}
+@media(max-width:767px){.chart-section{grid-template-columns:1fr}}
+.chart-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,3.5vw,36px);font-weight:900;letter-spacing:-0.01em;text-transform:uppercase;margin-bottom:32px}
+.chart-bar-row{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.cbr-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;width:80px;flex-shrink:0;color:var(--ink);letter-spacing:0.04em;text-transform:uppercase}
+.cbr-track{flex:1;height:8px;background:#e5e5e5}
+.cbr-fill{height:100%;background:var(--ink)}
+.cbr-fill.red{background:var(--red)}
+.cbr-val{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;width:52px;text-align:right;flex-shrink:0;color:var(--ink)}
+
+.univ-section{background:var(--ink);border-bottom:3px solid rgba(255,255,255,0.08)}
+.univ-inner{max-width:1400px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start}
+@media(max-width:767px){.univ-inner{grid-template-columns:1fr}}
+.ut-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.ut-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,6vw,64px);font-weight:900;letter-spacing:-0.01em;line-height:1.0;text-transform:uppercase;color:#fff;margin-bottom:20px}
+.ut-body{font-size:13px;color:rgba(255,255,255,0.35);line-height:1.85;font-weight:300}
+.univ-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:3px solid rgba(255,255,255,0.12)}
+.ug-card{padding:24px;border-right:3px solid rgba(255,255,255,0.12);border-bottom:3px solid rgba(255,255,255,0.12)}
+.ug-card:nth-child(3n){border-right:none}
+.ug-card:nth-last-child(-n+3){border-bottom:none}
+.ug-univ{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:8px}
+.ug-count{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,40px);font-weight:900;letter-spacing:-0.02em;line-height:1;color:var(--red);margin-bottom:4px}
+.ug-label{font-size:11px;color:rgba(255,255,255,0.35)}
+
+.insight-section{max-width:1400px;margin:0 auto;padding:56px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:3px solid var(--ink)}
+@media(max-width:767px){.insight-section{grid-template-columns:1fr}}
+.ins-card{padding:0 32px;border-right:3px solid var(--ink)}
+.ins-card:first-child{padding-left:0}
+.ins-card:last-child{border-right:none}
+.ins-tag{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.ins-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(20px,2.5vw,26px);font-weight:800;letter-spacing:0;margin-bottom:12px;line-height:1.1;text-transform:uppercase}
+.ins-body{font-size:13px;color:#666;line-height:1.85}
+
+footer{background:var(--ink);padding:32px 32px;border-top:3px solid rgba(255,255,255,0.1)}
+.footer-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.f-logo{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;color:#fff;letter-spacing:0.02em;text-transform:uppercase}
+.f-logo .up{color:var(--red)}
+.f-meta{font-size:11px;color:rgba(255,255,255,0.25);font-weight:400;letter-spacing:0.04em;text-transform:uppercase}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "@id": "https://learnup.kr/#organization",
+  "name": "런업",
+  "alternateName": ["LearnUp", "런 업"],
+  "url": "https://learnup.kr",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://learnup.kr/apple-touch-icon.png",
+    "width": 180,
+    "height": 180
+  },
+  "image": "https://learnup.kr/apple-touch-icon.png",
+  "description": "실제 성적 데이터 기반으로 맞춤 학원비교.",
+  "areaServed": "대한민국",
+  "telephone": "010-7463-1829",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "경기도 성남시 분당구 정자동 25",
+    "addressCountry": "KR"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://learnup.kr/#website",
+  "name": "런업",
+  "alternateName": ["LearnUp", "런 업"],
+  "url": "https://learnup.kr",
+  "publisher": {
+    "@id": "https://learnup.kr/#organization"
+  },
+  "inLanguage": "ko-KR"
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">런<span class="up">업</span></div>
+    <div class="nav-badge">맞춤 성적 비교</div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="h-eyebrow">맞춤 성적 데이터 비교</div>
+      <h1 class="h-title">성적으로<br><span class="accent">증명된</span><br>학원만</h1>
+      <div class="h-body">홍보가 아닌 실제 성적 데이터로 비교합니다. 전국 684개 맞춤 센터의 수능 등급 향상, 대학 합격 실적을 수치로 보여드립니다.</div>
+    </div>
+    <div>
+      <div class="big-stat-grid">
+        <div class="bs"><div class="bs-num red">684</div><div class="bs-label">비교 대상 맞춤센터</div></div>
+        <div class="bs"><div class="bs-num">+2.4</div><div class="bs-label">평균 등급 향상 (6개월)</div></div>
+        <div class="bs"><div class="bs-num">94%</div><div class="bs-label">TOP 10 합격률</div></div>
+        <div class="bs"><div class="bs-num">월 38만</div><div class="bs-label">맞춤 전문 평균 수강료</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <div class="band-inner">
+    <div class="bi"><strong>12,841</strong>개 센터 보유</div>
+    <div class="bi">업데이트 <strong>매일</strong></div>
+    <div class="bi">합격 실적 <strong>직접 검증</strong></div>
+    <div class="bi">강남 · 목동 · 분당 · 노원 <strong>4대 학군</strong></div>
+    <div class="bi">수능 · 내신 · 논술 · 면접 <strong>종합 커버</strong></div>
+  </div>
+</div>
+
+<div class="tabs-section">
+  <h2 class="tabs-title">과목별 성적 비교</h2>
+  <div class="tab-row">
+    <div class="tab on red" data-tab="math">수학</div>
+    <div class="tab" data-tab="eng">영어</div>
+    <div class="tab" data-tab="kor">국어</div>
+    <div class="tab" data-tab="sci">과학</div>
+    <div class="tab" data-tab="essay">논술</div>
+    <div class="tab" data-tab="all">통합</div>
+  </div>
+  <div class="ct-head">
+    <div class="ct-head-c">기관 정보</div>
+    <div class="ct-head-c">지역</div>
+    <div class="ct-head-c">성적 향상</div>
+    <div class="ct-head-c">합격률</div>
+    <div class="ct-head-c">월 수강료</div>
+  </div>
+
+  <div class="tab-panel on" id="tab-math">
+    <div class="table-border">
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">천안 성정 수학원</div><div class="ct-loc">수능수학 전문 · 8년 경력 강사</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">충남 천안시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+31점</span><div class="bar-wrap"><div class="bar-f" style="width:91%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">93%</span><div class="bar-wrap"><div class="bar-f" style="width:93%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">33만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">오산 세마 수학원</div><div class="ct-loc">중등 전문 · 개념~심화 단계별</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경기 오산시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+24점</span><div class="bar-wrap"><div class="bar-f" style="width:71%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">88%</span><div class="bar-wrap"><div class="bar-f" style="width:88%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">27만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">진주 강남 수학원</div><div class="ct-loc">소수정예 · 내신+수능 병행</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경남 진주시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+27점</span><div class="bar-wrap"><div class="bar-f" style="width:79%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">85%</span><div class="bar-wrap"><div class="bar-f" style="width:85%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">29만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">여수 학동 수학탐구</div><div class="ct-loc">고등 전문 · 유형별 집중 훈련</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">전남 여수시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+22점</span><div class="bar-wrap"><div class="bar-f" style="width:65%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">82%</span><div class="bar-wrap"><div class="bar-f" style="width:82%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">25만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">춘천 소양 수학원</div><div class="ct-loc">초중등 전문 · 기초 완성 프로그램</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">강원 춘천시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+19점</span><div class="bar-wrap"><div class="bar-f" style="width:56%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">80%</span><div class="bar-wrap"><div class="bar-f" style="width:80%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">22만원</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab-eng">
+    <div class="table-border">
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">대전 탄방 영어원</div><div class="ct-loc">수능영어 전문 · 독해+문법 집중</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">대전 서구</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+28점</span><div class="bar-wrap"><div class="bar-f" style="width:82%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">91%</span><div class="bar-wrap"><div class="bar-f" style="width:91%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">30만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">의정부 민락 영어원</div><div class="ct-loc">회화+수능 병행 · 원어민 강사</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경기 의정부시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+25점</span><div class="bar-wrap"><div class="bar-f" style="width:74%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">87%</span><div class="bar-wrap"><div class="bar-f" style="width:87%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">28만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">원주 단계 영어원</div><div class="ct-loc">내신영어 전문 · 학교별 맞춤 커리</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">강원 원주시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+22점</span><div class="bar-wrap"><div class="bar-f" style="width:65%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">84%</span><div class="bar-wrap"><div class="bar-f" style="width:84%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">26만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">군산 나운 영어클럽</div><div class="ct-loc">초중등 전문 · 파닉스~독해 단계</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">전북 군산시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+18점</span><div class="bar-wrap"><div class="bar-f" style="width:53%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">81%</span><div class="bar-wrap"><div class="bar-f" style="width:81%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">21만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">마산 합성 영어원</div><div class="ct-loc">고등 수능 전문 · 1등급 목표반</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경남 창원시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+30점</span><div class="bar-wrap"><div class="bar-f" style="width:88%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">89%</span><div class="bar-wrap"><div class="bar-f" style="width:89%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">32만원</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab-kor">
+    <div class="table-border">
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">경주 황성 국어원</div><div class="ct-loc">수능국어 전문 · 비문학 집중</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경북 경주시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+26점</span><div class="bar-wrap"><div class="bar-f" style="width:76%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">90%</span><div class="bar-wrap"><div class="bar-f" style="width:90%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">28만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">순천 연향 국어원</div><div class="ct-loc">내신+수능 병행 · 문학 집중반</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">전남 순천시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+23점</span><div class="bar-wrap"><div class="bar-f" style="width:68%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">86%</span><div class="bar-wrap"><div class="bar-f" style="width:86%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">25만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">안동 옥동 국어논술</div><div class="ct-loc">고등 전문 · 독서+논술 통합</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경북 안동시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+21점</span><div class="bar-wrap"><div class="bar-f" style="width:62%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">83%</span><div class="bar-wrap"><div class="bar-f" style="width:83%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">24만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">부천 원미 국어원</div><div class="ct-loc">중등 전문 · 어휘~독해 단계별</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경기 부천시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+19점</span><div class="bar-wrap"><div class="bar-f" style="width:56%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">80%</span><div class="bar-wrap"><div class="bar-f" style="width:80%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">22만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">속초 조양 국어원</div><div class="ct-loc">소수정예 · 수능 1등급 특화반</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">강원 속초시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+28점</span><div class="bar-wrap"><div class="bar-f" style="width:82%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">88%</span><div class="bar-wrap"><div class="bar-f" style="width:88%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">30만원</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab-sci">
+    <div class="table-border">
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">구미 인동 과학원</div><div class="ct-loc">물리·화학 전문 · 수능 대비반</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경북 구미시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+29점</span><div class="bar-wrap"><div class="bar-f" style="width:85%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">92%</span><div class="bar-wrap"><div class="bar-f" style="width:92%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">34만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">충주 호암 과학탐구</div><div class="ct-loc">생명·지구 전문 · 실험+이론 병행</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">충북 충주시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+24점</span><div class="bar-wrap"><div class="bar-f" style="width:71%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">86%</span><div class="bar-wrap"><div class="bar-f" style="width:86%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">29만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">거제 고현 과학원</div><div class="ct-loc">중고등 전문 · 과탐 전 과목 개설</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경남 거제시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+21점</span><div class="bar-wrap"><div class="bar-f" style="width:62%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">83%</span><div class="bar-wrap"><div class="bar-f" style="width:83%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">27만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">목포 상동 과학원</div><div class="ct-loc">고등 화학·물리 집중반</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">전남 목포시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+20점</span><div class="bar-wrap"><div class="bar-f" style="width:59%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">81%</span><div class="bar-wrap"><div class="bar-f" style="width:81%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">24만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">이천 증포 과학실험</div><div class="ct-loc">초중등 전문 · 탐구 실험 중심</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경기 이천시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+17점</span><div class="bar-wrap"><div class="bar-f" style="width:50%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">78%</span><div class="bar-wrap"><div class="bar-f" style="width:78%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">21만원</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab-essay">
+    <div class="table-border">
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">광명 철산 논술원</div><div class="ct-loc">대입논술 전문 · 인문계 특화</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경기 광명시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+32점</span><div class="bar-wrap"><div class="bar-f" style="width:94%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">92%</span><div class="bar-wrap"><div class="bar-f" style="width:92%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">36만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">충주 교현 논술원</div><div class="ct-loc">자연계 논술 전문 · 수리논술 강점</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">충북 충주시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+27점</span><div class="bar-wrap"><div class="bar-f" style="width:79%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">87%</span><div class="bar-wrap"><div class="bar-f" style="width:87%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">31만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">여주 현암 국어논술</div><div class="ct-loc">소논문+대입 논술 통합반</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경기 여주시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+23점</span><div class="bar-wrap"><div class="bar-f" style="width:68%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">84%</span><div class="bar-wrap"><div class="bar-f" style="width:84%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">28만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">익산 영등 논술원</div><div class="ct-loc">인문논술 전문 · 합격 사례 다수</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">전북 익산시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+20점</span><div class="bar-wrap"><div class="bar-f" style="width:59%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">81%</span><div class="bar-wrap"><div class="bar-f" style="width:81%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">25만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">포천 선단 국어논술</div><div class="ct-loc">고등 전문 · 논리적 사고 훈련</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경기 포천시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+18점</span><div class="bar-wrap"><div class="bar-f" style="width:53%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">79%</span><div class="bar-wrap"><div class="bar-f" style="width:79%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">23만원</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab-all">
+    <div class="table-border">
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">성남 신흥 통합원</div><div class="ct-loc">국영수 통합 · 내신+수능 전 과목</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경기 성남시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+33점</span><div class="bar-wrap"><div class="bar-f" style="width:97%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">94%</span><div class="bar-wrap"><div class="bar-f" style="width:94%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">45만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">김해 장유 통합원</div><div class="ct-loc">수학·영어·국어 동시 관리</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경남 김해시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+27점</span><div class="bar-wrap"><div class="bar-f" style="width:79%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">88%</span><div class="bar-wrap"><div class="bar-f" style="width:88%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">39만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">아산 배방 통합원</div><div class="ct-loc">중고등 전 과목 · 담임제 관리</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">충남 아산시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+24점</span><div class="bar-wrap"><div class="bar-f" style="width:71%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">85%</span><div class="bar-wrap"><div class="bar-f" style="width:85%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">36만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">구리 교문 수능통합</div><div class="ct-loc">수능 전 과목 · 재수생 전용반</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">경기 구리시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+30점</span><div class="bar-wrap"><div class="bar-f" style="width:88%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">90%</span><div class="bar-wrap"><div class="bar-f" style="width:90%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">48만원</div>
+      </div>
+      <div class="ct-row">
+        <div class="ct-cell"><div><div class="ct-name">나주 남평 통합원</div><div class="ct-loc">초중등 전 과목 · 기초 완성반</div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:15px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">전남 나주시</div>
+        <div class="ct-cell"><span class="score-val" style="color:var(--red)">+18점</span><div class="bar-wrap"><div class="bar-f" style="width:53%"></div></div></div>
+        <div class="ct-cell"><span class="score-val">79%</span><div class="bar-wrap"><div class="bar-f" style="width:79%"></div></div></div>
+        <div class="ct-cell" style="font-family:'Barlow Condensed';font-size:18px;font-weight:900">30만원</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="big-nums">
+  <div class="bn-inner">
+    <div class="bn-col"><div class="bn-num">684<span class="bn-sup">개</span></div><div class="bn-label">성적 데이터 보유<br>맞춤 전문 센터</div></div>
+    <div class="bn-col"><div class="bn-num">+34<span class="bn-sup">점</span></div><div class="bn-label">대치 수학 최대<br>수능 점수 향상폭</div></div>
+    <div class="bn-col"><div class="bn-num">94<span class="bn-sup">%</span></div><div class="bn-label">TOP 10 센터<br>목표 대학 합격률</div></div>
+    <div class="bn-col"><div class="bn-num">6<span class="bn-sup">개월</span></div><div class="bn-label">평균 체감 성적<br>향상 소요 기간</div></div>
+  </div>
+</div>
+
+<div class="chart-section">
+  <div>
+    <div class="chart-title">지역별 평균 성적 향상</div>
+    <div class="chart-bar-row"><div class="cbr-label">강남구</div><div class="cbr-track"><div class="cbr-fill red" style="width:100%"></div></div><div class="cbr-val">+34점</div></div>
+    <div class="chart-bar-row"><div class="cbr-label">양천구</div><div class="cbr-track"><div class="cbr-fill red" style="width:82%"></div></div><div class="cbr-val">+28점</div></div>
+    <div class="chart-bar-row"><div class="cbr-label">성남시</div><div class="cbr-track"><div class="cbr-fill red" style="width:85%"></div></div><div class="cbr-val">+29점</div></div>
+    <div class="chart-bar-row"><div class="cbr-label">서초구</div><div class="cbr-track"><div class="cbr-fill" style="width:76%"></div></div><div class="cbr-val">+26점</div></div>
+    <div class="chart-bar-row"><div class="cbr-label">강동구</div><div class="cbr-track"><div class="cbr-fill" style="width:91%"></div></div><div class="cbr-val">+31점</div></div>
+    <div class="chart-bar-row"><div class="cbr-label">노원구</div><div class="cbr-track"><div class="cbr-fill" style="width:65%"></div></div><div class="cbr-val">+22점</div></div>
+  </div>
+  <div>
+    <div class="chart-title">과목별 평균 합격률</div>
+    <div class="chart-bar-row"><div class="cbr-label">수학</div><div class="cbr-track"><div class="cbr-fill red" style="width:94%"></div></div><div class="cbr-val">94%</div></div>
+    <div class="chart-bar-row"><div class="cbr-label">영어</div><div class="cbr-track"><div class="cbr-fill red" style="width:88%"></div></div><div class="cbr-val">88%</div></div>
+    <div class="chart-bar-row"><div class="cbr-label">국어</div><div class="cbr-track"><div class="cbr-fill" style="width:82%"></div></div><div class="cbr-val">82%</div></div>
+    <div class="chart-bar-row"><div class="cbr-label">과학</div><div class="cbr-track"><div class="cbr-fill" style="width:89%"></div></div><div class="cbr-val">89%</div></div>
+    <div class="chart-bar-row"><div class="cbr-label">논술</div><div class="cbr-track"><div class="cbr-fill" style="width:91%"></div></div><div class="cbr-val">91%</div></div>
+    <div class="chart-bar-row"><div class="cbr-label">코딩</div><div class="cbr-track"><div class="cbr-fill" style="width:96%"></div></div><div class="cbr-val">96%</div></div>
+  </div>
+</div>
+
+<div class="univ-section">
+  <div class="univ-inner">
+    <div>
+      <div class="ut-eyebrow">University Results</div>
+      <h2 class="ut-title">대학별<br>합격 실적</h2>
+      <div class="ut-body">런업 파트너 수강생의 2024학년도 대입 합격 실적입니다. 직접 검증된 데이터만 집계합니다.</div>
+    </div>
+    <div class="univ-grid">
+      <div class="ug-card"><div class="ug-univ">서울대학교</div><div class="ug-count">247</div><div class="ug-label">명 합격</div></div>
+      <div class="ug-card"><div class="ug-univ">연세대학교</div><div class="ug-count">384</div><div class="ug-label">명 합격</div></div>
+      <div class="ug-card"><div class="ug-univ">고려대학교</div><div class="ug-count">421</div><div class="ug-label">명 합격</div></div>
+      <div class="ug-card"><div class="ug-univ">성균관대학교</div><div class="ug-count">512</div><div class="ug-label">명 합격</div></div>
+      <div class="ug-card"><div class="ug-univ">한양대학교</div><div class="ug-count">634</div><div class="ug-label">명 합격</div></div>
+      <div class="ug-card"><div class="ug-univ">KAIST / POSTECH</div><div class="ug-count">89</div><div class="ug-label">명 합격</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="insight-section">
+  <div class="ins-card">
+    <div class="ins-tag">Insight 01</div>
+    <div class="ins-title">3개월 vs 6개월, 언제 효과가 보이나</div>
+    <div class="ins-body">데이터 분석 결과, 체감 성적 향상이 시작되는 시점은 평균 11.2주였습니다. 3개월 이내 포기율이 높은 것은 이 시점 직전에 해당합니다. 꾸준한 수강이 핵심입니다.</div>
+  </div>
+  <div class="ins-card">
+    <div class="ins-tag">Insight 02</div>
+    <div class="ins-title">소수 정예 vs 대형 클래스, 진짜 차이</div>
+    <div class="ins-body">학생 1인당 강사 비율이 높을수록 성적 향상폭이 큰 것은 사실입니다. 단, 15인 이하 소수정예 반과 30인 대형 반의 합격률 차이는 7%에 불과했습니다. 강사의 질이 더 중요합니다.</div>
+  </div>
+  <div class="ins-card">
+    <div class="ins-tag">Insight 03</div>
+    <div class="ins-title">수강료와 성적 향상의 상관관계</div>
+    <div class="ins-body">월 수강료 30만원 미만 기관과 50만원 이상 기관의 평균 합격률 차이는 단 8.3%입니다. 비용보다 커리큘럼과 강사 피드백 방식이 결과를 결정합니다.</div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="f-logo">런<span class="up">업</span></div>
+    <div class="f-meta">© 2026 런업 · 맞춤 성적 비교 플랫폼 · 684개 센터</div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.tab-row .tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-row .tab').forEach(t => t.classList.remove('on','red'));
+    btn.classList.add('on','red');
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('on'));
+    document.getElementById('tab-'+btn.dataset.tab).classList.add('on');
+  });
+});
+</script>
+</body>
+</html>
