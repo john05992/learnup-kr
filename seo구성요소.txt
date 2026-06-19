@@ -1,0 +1,48 @@
+[ learnup.kr — 런업 | 맞춤 성적 비교 플랫폼 ]
+
+■ title: 런업 | 맞춤 성적 비교 플랫폼
+■ description: 수능 성적 향상 데이터로 검증된 전국 684개 기관을 과목별·지역별로 비교하세요.
+■ keywords: 맞춤교육, 성적향상, 수능대비, 내신관리, 성적데이터, 교육랭킹, 교육비교
+
+─────────────────────────────────────────
+
+<!-- 구조화 데이터: EducationalOrganization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "@id": "https://learnup.kr/#organization",
+  "name": "런업",
+  "alternateName": ["LearnUp", "런 업"],
+  "url": "https://learnup.kr",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://learnup.kr/apple-touch-icon.png",
+    "width": 180,
+    "height": 180
+  },
+  "image": "https://learnup.kr/apple-touch-icon.png",
+  "description": "실제 성적 데이터 기반으로 맞춤 학원비교.",
+  "areaServed": "대한민국",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "KR"
+  }
+}
+</script>
+
+<!-- 구조화 데이터: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://learnup.kr/#website",
+  "name": "런업",
+  "alternateName": ["LearnUp", "런 업"],
+  "url": "https://learnup.kr",
+  "publisher": {
+    "@id": "https://learnup.kr/#organization"
+  },
+  "inLanguage": "ko-KR"
+}
+</script>
