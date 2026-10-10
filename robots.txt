@@ -4,4 +4,4 @@ Allow: /
 User-agent: Yeti
 Allow: /
 
-Sitemap: https://learnup.kr/sitemap.xml
+Sitemap: https://learnup.kr/sitemapx.xml
